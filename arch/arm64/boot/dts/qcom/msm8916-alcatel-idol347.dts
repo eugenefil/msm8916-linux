@@ -211,6 +211,20 @@
 		touchscreen-size-x = <2048>;
 		touchscreen-size-y = <2048>;
 	};
+
+	focaltech@38 {
+		compatible = "focaltech,5436";
+		reg = <0x38>;
+		interrupt-parent = <&msmgpio>;
+		interrupts = <13 IRQ_TYPE_EDGE_FALLING>;
+		reset-gpios = <&msmgpio 100 GPIO_ACTIVE_LOW>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&ts_int_reset_default>;
+		vdd-supply = <&pm8916_l17>;
+		iovcc-supply = <&pm8916_l5>;
+		touchscreen-size-x = <720>;
+		touchscreen-size-y = <1280>;
+	};
 };
 
 &blsp_i2c5 {
